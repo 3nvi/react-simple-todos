@@ -1,0 +1,2 @@
+export const ADD_SNACKBAR = '@@TODO/ADD_SNACKBAR';
+export const DELETE_SNACKBAR = '@@TODO/DELETE_SNACKBAR';

@@ -1,0 +1,6 @@
+export const ADD_TODO = '@@TODO/ADD_TODO';
+export const DELETE_TODO = '@@TODO/DELETE_TODO';
+export const UPDATE_TODO = '@@TODO/UPDATE_TODO';
+export const TOGGLE_TODO_AS_DONE = '@@TODO/TOGGLE_TODO_AS_DONE';
+export const TOGGLE_TODO_VISIBILITY = '@@TODO/TOGGLE_TODO_VISIBILITY';
+export const UNDO_ACTION = '@@TODO/UNDO_ACTION';

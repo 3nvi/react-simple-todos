@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+import { addTodo, getTotalTodos } from 'ducks/todo';
+import styled from '@emotion/styled';
+import TodoForm from 'components/TodoForm';
+import TodoList from './components/TodoList';
+import Snackbar from './components/Snackbar';
 
-function App() {
+const Container = styled.main`
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+
+  @media only screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+`;
+
+function App({ addTodo, totalTodos }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <TodoForm onSubmit={addTodo} size={!totalTodos ? 'large' : 'small'} />
+      <TodoList />
+      <Snackbar />
+    </Container>
   );
 }
 
-export default App;
+const mapStateToProps = state => ({ totalTodos: getTotalTodos(state) });
+
+const mapDispatchToProps = { addTodo };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
