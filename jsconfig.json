@@ -1,9 +1,5 @@
 {
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["src"]
-      }
-    }
+  "compilerOptions": {
+    "baseUrl": "./src"
   }
 }
